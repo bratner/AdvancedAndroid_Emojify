@@ -21,6 +21,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -185,7 +186,8 @@ public class MainActivity extends AppCompatActivity {
         mResultsBitmap = BitmapUtils.resamplePic(this, mTempPhotoPath);
 
         // DONE (3): Call the new detectFaces() method, passing in the resampled bitmap to detect the faces in the picture.
-        Emojifier.detectFaces(this, mResultsBitmap);
+       // Emojifier.detectFaces(this, BitmapFactory.decodeFile(mTempPhotoPath));
+        Emojifier.detectFaces(this,mResultsBitmap);
         // Set the new bitmap to the ImageView
         mImageView.setImageBitmap(mResultsBitmap);
     }
